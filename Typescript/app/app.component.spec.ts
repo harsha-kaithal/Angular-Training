@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Component-Assignment'`, () => {
+  it(`should have as title 'Databinding-Assignment'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Component-Assignment');
+    expect(app.title).toEqual('Databinding-Assignment');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Component-Assignment app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Databinding-Assignment app is running!');
   });
 });

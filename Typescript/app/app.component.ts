@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Component-Assignment';
+  title = 'Databinding-Assignment';
+  name:string="";
+  isDisable:boolean=false;
+
+  reset(){
+    this.name="";
+  }
+  
 }
