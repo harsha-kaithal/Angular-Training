@@ -1,0 +1,3 @@
+<button type="button" (click)="ShowAndHide()">Display Details</button>
+<p *ngIf="isDataVisible">Your name: Harsha Kaithal</p>
+<p *ngFor='let i of arrayCounter' [ngStyle]="{backgroundColor: getColor(i)}" [ngClass]="{'getTextColor': i>=5}"> {{i}} </p>
