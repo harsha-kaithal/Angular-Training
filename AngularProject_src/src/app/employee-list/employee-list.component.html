@@ -1,0 +1,35 @@
+<br>
+<table border="1">
+
+    <tr>
+
+        <th>Id</th>
+
+        <th>Employee Name</th>
+
+        <th>Employee Mobile No.</th>
+
+        <th> Place</th>
+
+        <th>Update Details </th>
+        
+        <th>Delete Employee</th>
+    </tr>
+
+    <tr  *ngFor = "let e of emp">
+
+        <td>{{e.id}}</td>
+
+        <td>{{e.name}}</td>
+
+        <td>{{e.mob}}</td>
+
+        <td>{{e.addr}}</td>
+
+        <td><button type="button" (click)="edit(e.id)" class="btn btn-success"> Update Details</button></td> 
+
+        <td><button (click)="deleteDataById(e.id)" class="btn btn-primary btn-small" id="submitbtn" name="submit">Delete Employee</button></td> 
+
+    </tr>
+
+</table>

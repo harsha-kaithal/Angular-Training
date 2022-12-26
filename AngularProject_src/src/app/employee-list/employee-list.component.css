@@ -1,0 +1,28 @@
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    box-shadow: 10px 10px black;
+
+  }
+  
+  th{
+    background-color:rgb(205, 197, 194);
+    padding: 15px;
+    color: black;
+    box-shadow: 2px 2px 2px 2px black;
+
+  }
+  
+  td {
+    text-align: left;
+    padding: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+    color: rgb(0, 0, 114);
+  }
+  
+  tr:nth-child(even) {
+    background-color:lightblue;
+
+  }

@@ -1,0 +1,56 @@
+<br>
+<div class="container">
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+            <div class="row">
+
+                <div class="form-group col-md-2">
+                    <input type="text" placeholder="Enter Name" formControlName="name" [pattern]="namepattern">
+                    <div style="color: red;"
+                        *ngIf="employeeForm.controls['name'].touched && employeeForm.controls['name'].invalid">
+                        <span *ngIf="employeeForm.controls['name'].hasError('required')">*Name is required</span>
+                        <span *ngIf="employeeForm.controls['name'].hasError('pattern')">*Only alphabets with space
+                            between 2 to
+                            20 characters are allowed
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-2">
+                    <input type="text" placeholder="Enter Mobile No." formControlName="mob" required>
+                    <div style="color: red;"
+                        *ngIf="employeeForm.controls['mob'].touched && employeeForm.controls['mob'].invalid">
+                        <span *ngIf="employeeForm.controls['mob'].hasError('required')">*Mobile Number is Required</span>
+                        <span *ngIf="employeeForm.controls['mob'].getError.length"><p>*Use 10 digit Mobile Number</p></span>
+                    </div>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="form-group col-md-4">
+                <input type="text" placeholder="Enter Address" formControlName="addr" required>
+                <div style="color: red;"
+                    *ngIf="employeeForm.controls['addr'].touched && employeeForm.controls['addr'].invalid">
+                    <span *ngIf="employeeForm.controls['addr'].hasError('required')">*Address is required</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group col-md-4">
+                <button class="btn btn-success btn-lg btn-block">Submit</button>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="form-group col-md-4">
+                    <button class="btn btn-warning btn-lg btn-block" (click)="reset()">Reset</button>
+                </div>
+            </div>
+        </div>
+    
+    </form>
+
+</div>
