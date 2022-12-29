@@ -1,0 +1,77 @@
+<mat-sidenav-container fullscreen style="background-color: rgb(182, 146, 216);">
+  <mat-sidenav #sidenav>
+    <mat-nav-list (click)="sidenav.close()">
+        <a mat-list-item routerLink="">
+          <mat-icon>description</mat-icon>
+          <span>Courses List</span>
+      </a>
+
+      <a mat-list-item routerLink="">
+          <mat-icon>library_add</mat-icon>
+          <span>Add new course</span>
+      </a>
+
+      </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <a mat-button routerLink="/home">
+        <mat-icon>home</mat-icon>
+        Home
+      </a>
+
+      <a mat-button routerLink="/registration">
+        <mat-icon>person_add</mat-icon>
+        Registration
+      </a>
+
+      <a mat-button routerLink="/login">
+        <mat-icon>account_circle</mat-icon>
+        Login
+      </a>
+
+      <a mat-button [matMenuTriggerFor]="dropdown">
+        About Us
+      </a>
+      
+      <mat-menu #dropdown>
+        <mat-icon>question_answer</mat-icon>
+        <button mat-menu-item (click)="openDialog()">CEO message</button>
+        <button mat-menu-item (click)="contactDetailsOpenDialog()">Contact Details</button>
+      </mat-menu>
+
+  </mat-toolbar>
+
+  <br>
+  <div>
+    <mat-progress-bar mode="determinate" value="60" ></mat-progress-bar> 
+  </div>
+  
+  <br>
+  <div>
+    <mat-progress-bar mode="indeterminate" value="60" ></mat-progress-bar>   
+  </div>
+
+  <br>
+  <div>
+    <mat-progress-bar mode="buffer" value="60" ></mat-progress-bar>   
+  </div>
+
+  <br>
+  <div>
+    <mat-progress-bar mode="query" value="60" ></mat-progress-bar>   
+  </div>
+
+  <mat-list>
+    <mat-list-item>List Item 1</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>List Item 2</mat-list-item>
+  </mat-list>
+
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>
