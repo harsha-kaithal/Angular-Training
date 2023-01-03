@@ -1,0 +1,103 @@
+<mat-card>
+  <mat-card-content>
+    <h2 style="background-color: rgb(176, 205, 226);color:darkblue;">Slider</h2>
+
+    <section>
+      <mat-form-field appearance="fill">
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [(ngModel)]="value">
+      </mat-form-field>
+
+      &nbsp;
+      <mat-form-field appearance="fill">
+        <mat-label>Min value</mat-label>
+        <input matInput type="number" [(ngModel)]="min">
+      </mat-form-field>
+
+      &nbsp;
+      <mat-form-field appearance="fill">
+        <mat-label>Max value</mat-label>
+        <input matInput type="number" [(ngModel)]="max">
+      </mat-form-field>
+
+      &nbsp;
+      <mat-form-field appearance="fill">
+        <mat-label>Step size</mat-label>
+        <input matInput type="number" [(ngModel)]="step">
+      </mat-form-field>
+    </section>
+
+    <section>
+      <mat-checkbox [(ngModel)]="showTicks">Show ticks</mat-checkbox>
+    </section>
+
+    <section>
+      <mat-checkbox [(ngModel)]="thumbLabel">Show thumb label</mat-checkbox>
+    </section>
+
+    <section>
+      <mat-checkbox [(ngModel)]="disabled">Disabled</mat-checkbox>
+    </section>
+
+    <mat-slider [disabled]="disabled" [max]="max" [min]="min" [step]="step" [discrete]="thumbLabel"
+      [showTickMarks]="showTicks">
+      <input matSliderThumb [(ngModel)]="value">
+    </mat-slider>
+
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <h2 style="background-color: rgb(176, 205, 226);color:darkblue;">Result of Slider through Data Binding</h2>
+
+    <div>
+      <label>Value: {{value}}</label>
+    </div>
+    
+    <br>
+    <div>
+      <label>Min: {{min}}</label>
+    </div>
+
+    <br>
+    <div>
+      <label>Max: {{max}}</label>
+    </div>   
+    
+    <br>
+    <div>
+      <label>Step: {{step}}</label>
+    </div>
+    
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <h2 style="background-color: rgb(176, 205, 226);color:darkblue;">Ripples</h2>
+
+    <mat-checkbox [(ngModel)]="centered">Centered</mat-checkbox>
+    <mat-checkbox [(ngModel)]="disabled">Disabled</mat-checkbox>
+    <mat-checkbox [(ngModel)]="unbounded">Unbounded</mat-checkbox>
+
+    &nbsp;
+    <mat-form-field appearance="fill">
+      <mat-label>Radius</mat-label>
+      <input matInput [(ngModel)]="radius" type="number">
+    </mat-form-field>
+
+    &nbsp;
+    <mat-form-field appearance="fill">
+      <mat-label>Color</mat-label>
+      <input matInput [(ngModel)]="color" type="text">
+    </mat-form-field>
+
+
+    <div style="width: 200px; height: 200px;background-color: rgb(176, 205, 226);color:darkblue;" class="example-ripple-container mat-elevation-z4" matRipple [matRippleCentered]="centered"
+      [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius"
+      [matRippleColor]="color">
+      Click here to see the Ripples
+    </div>
+  </mat-card-content>
+</mat-card>
